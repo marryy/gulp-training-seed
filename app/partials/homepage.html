@@ -1,0 +1,55 @@
+<section class="bookmarks-page">
+  <div class="tags-section">
+    <label>Filter by tag:</label>
+    <!-- <span ng-repeat="tag in tags track by $index" ng-click="sortByTag(tag)" class="tag">{{tag}}</span> -->
+    <tags tags="tags" selectable="true" sort-by-tag="sortByTag(tag)"></tags>
+    <button class="btn" ng-click="bookmarks = getBookmarks()">Clear filter</button>
+  </div>
+
+  <label>Title: </label>
+  <label>URL: </label>
+  <label>Tags: </label>
+  <label>Edit: </label>
+  <!-- <ul>
+    <li ng-repeat="bookmark in bookmarks track by $index">
+      <div class="title">
+        <span>{{bookmark.title}}</span>
+      </div>
+      <div class="url">
+        <span>{{bookmark.url}}</span>
+      </div>
+      <div class="tags">
+        <tags booo='true' bookmark={{bookmark}}><tags>
+        <span ng-repeat="tag in bookmark.tags track by $index" class="tag">{{tag}}</span>
+      </div>
+      <div class="buttons-container">
+        <a ui-sref="bookmark({id:bookmark._id.$oid})" class="btn">Edit</a>
+        <a class="btn" ng-click="delete(bookmark._id.$oid)">Delete</a>
+      </div>
+    </li>
+  </ul> -->
+  <bookmarks bookmarks="bookmarks" delete-bookmark="deleteBookmark(id)"></bookmarks>
+
+  <div class="add-bookmark">
+    <label>Add a new bookmark</label>
+    <form name="addBookmark" class="add-bookmark-form">
+      <div class="input-field">
+        <label class="input-label">Name: </label>
+        <input type="text" ng-model="bookmark.title" required />
+      </div>
+      <div class="input-field">
+        <label class="input-label">URL: </label>
+        <input type="url" ng-model="bookmark.url" required />
+      </div>
+      <div class="input-field">
+        <label class="input-label">Tags: </label>
+        <input type="text" ng-model="bookmark.tags" required />
+        <span>//separate tags with ',' only, without spaces
+      </div>
+      <div class="buttons-container">
+        <input type="submit" ng-click="save(bookmark)" ng-disabled="addBookmark.$invalid" value="Save" class="btn" />
+        <button class="btn" ng-click=cancel()>Cancel</button>
+      </div>
+    </form>
+  </div>
+</section>

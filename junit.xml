@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-04-22T11:18:40" id="0" hostname="EPBGSOFW0108">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
+    </properties>
+  </testsuite>
+  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-04-22T11:18:41" id="0" hostname="EPBGSOFW0108" tests="2" errors="0" failures="0" time="0.038">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
+    </properties>
+    <testcase name="should be defined" time="0.024" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).package-version"/>
+    <testcase name="should have fifi tag in a span" time="0.014" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive testing"/>
+    <system-out><![CDATA[PhantomJS 1.9.8 (Windows 8 0.0.0) LOG: ['bla', 'blo', 'fifi']
+
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

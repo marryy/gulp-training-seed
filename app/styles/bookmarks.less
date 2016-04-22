@@ -1,0 +1,60 @@
+.bookmarks-page {
+  padding-top: 40px;
+
+  label {
+    font-weight: bold;
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    font-size: 25px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      width: 100%;
+      float: left;
+      box-sizing: border-box;
+      border-bottom: 1px solid #BA4A00;
+      .title, .url, .tags, .buttons-container {
+        display: inline-block;
+        width: 25%;
+        float: left;
+
+        span {
+          float: left;
+          text-align: left;
+          text-indent: 10px;
+
+          &.tag {
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .tags-section {
+    margin: 40px 0;
+    text-align: left;
+
+    .tag:hover {
+      cursor: pointer;
+    }
+  }
+
+  .add-bookmark {
+    margin-top: 40px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+
+    .add-bookmark-form {
+      display: inline-block;
+    }
+  }
+}

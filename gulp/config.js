@@ -16,7 +16,8 @@ module.exports = {
         src: [
             appDir + '/**/*.html',
             '!' + appDir + '/**/example.html',
-            '!' + appDir + '/**/*.spec.html'
+            '!' + appDir + '/**/*.spec.html',
+            '!' + '**/spec.js',
         ],
         settings: {
             root: appDir + '/',

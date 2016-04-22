@@ -1,55 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html ng-app="bookmarks">
+  <head lang="en">
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gdansk Training</title>
-    <!-- process:remove -->
-        <!--[if !IE]>--><script src="http://localhost:35729/livereload.js?snipver=1"></script><!--<![endif]-->
-        <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-messages/angular-messages.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="/bower_components/angular-aria/angular-aria.js"></script>
-        <script src="/bower_components/angular-material/angular-material.js"></script>
-    <!-- /process -->
-    <!-- process:template
-         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.min.js"></script>
-         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    /process -->
+    <title>Bookmarks</title>
+    <!--[if !IE]>--><script src="http://localhost:35729/livereload.js?snipver=1"></script><!--<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-resource.min.js"></script>
 
-    <!-- build:vendorCSS css/vendor.css -->
-        <!-- vendor:css --><!-- endinject -->
-    <!-- endbuild -->
+    <!-- <script src="e2e-tests/TEST-directive.spec.js"></script> -->
 
-    <!-- build:css css/gdanskTraining.css -->
-        <!-- inject:css --><!-- endinject -->
-    <!-- endbuild -->
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine-html.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script>
+    <script src="https://code.angularjs.org/1.2.18/angular-mocks.js"></script>
 
-    <!-- build:vendorJS js/vendor.js -->
-        <!-- vendor:js --><!-- endinject -->
-    <!-- endbuild -->
 
-    <!-- build:js js/gdanskTraining.js -->
-        <!-- inject:js --><!-- endinject -->
-        <!-- inject:.tmp/templates-and-app-version:js --><!-- endinject -->
-    <!-- endbuild -->
+    <script src="app/js/services/service.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/directives/tags.js"></script>
+    <script src="app/js/directives/bookmarks.js"></script>
 
-    <!-- build:demoJS js/demo-code.js -->
-        <script src="resources/package-version/package-version.js"></script>
-        <!-- demo:js --><!-- endinject -->
-    <!-- endbuild -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet/less" type="text/css" href="app/styles/main.less" />
+  </head>
 
-    <!-- build:demoCSS css/demo-code.css -->
-        <link rel="stylesheet" href="resources/package-version/package-version.css">
-        <!-- demo:css --><!-- endinject -->
-    <!-- endbuild -->
-</head>
-<body ng-app="gdansk-training">
-    <gdansk-training></gdansk-training>
-</body>
+  <body>
+    <div ng-include="'app/templates/header.html'"></div>
+    <div class="container" ui-view></div>
+
+    <script src="app/js/less.js"></script>
+  </body>
+
 </html>

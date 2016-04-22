@@ -1,0 +1,4 @@
+<div class="tags-directive">
+  <span ng-if="!selectable" ng-repeat="tag in tags track by $index" class="tag">{{tag}}</span>
+  <span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag" ng-click="sortByTag({tag:tag})">{{tag}}</span>
+</div>

@@ -31,7 +31,6 @@ describe.module = function (name, fnn, dd) {
     });
 };
 
-ddescribe.module = function (name, fn) {
+describe.module = function (name, fn) {
     return describe.module(name, fn, true);
 };
-

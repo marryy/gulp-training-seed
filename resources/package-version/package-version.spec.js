@@ -11,6 +11,6 @@ describe('package-version', function () {
     }));
 
     it('should be defined', function () {
-        expect(directive.element).toBeDefined();
+        expect(directive.element.scope).toBeDefined();
     });
 });
