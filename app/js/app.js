@@ -10,7 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "app/partials/homepage.html",
       controller: function($scope, $resource, Bookmark) {
 
-        $scope.reduceTags = function(array) {
+        function getUniqueTags(array) {
           var sorted = array.sort();
           var resultArray = [];
           for(var i = 0; i < array.length; i++) {
@@ -30,14 +30,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 $scope.tags.push(tag);
               });
             });
-            $scope.tags = $scope.reduceTags($scope.tags);
+            $scope.tags = getUniqueTags($scope.tags);
           });
         }
 
         $scope.allBookmarks = $scope.getBookmarks();
-
         $scope.bookmarks = $scope.bookmarks || $scope.allBookmarks;
-        //
+
         $scope.sortByTag = function(tag) {
           $scope.bookmarks = $scope.allBookmarks.filter(function(bookmark) {
             return bookmark.tags.indexOf(tag) > -1;
@@ -52,14 +51,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
             });
           });
         }
-        // $scope.delete = function(bookmarkId) {
-        //   Bookmark.get({ id: bookmarkId }, function(bookmarkToDel) {
-        //     $scope.bmark = bookmarkToDel;
-        //     $scope.bmark.$delete({id: bookmarkId}, function() {
-        //       $scope.bookmarks = $scope.getBookmarks();
-        //     });
-        //   });
-        // }
 
         $scope.save = function(bookmark) {
           var newBookmark = new Bookmark();
