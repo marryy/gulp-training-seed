@@ -1,0 +1,22 @@
+<div class="edit-bookmark-page">
+  <label class="page-label">Edit bookmark:</label>
+
+  <form name="editBookmark" class="edit-bookmark-form">
+    <div class="input-field">
+      <label class="input-label">Name: </label>
+      <input type="text" ng-model="bookmark.title" />
+    </div>
+    <div class="input-field">
+      <label class="input-label">URL: </label>
+      <input type="url" ng-model="bookmark.url" />
+    </div>
+    <div class="input-field">
+      <label class="input-label">Tags: </label>
+      <input type="text" ng-model="bookmark.tags"  />
+    </div>
+    <div class="buttons-container">
+      <input type="submit" ng-click="update(bookmark)" value="Save" class="btn" />
+      <a href="/" class="btn">Cancel</a>
+    </div>
+  </form>
+</div>

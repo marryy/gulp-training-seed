@@ -9,13 +9,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: "app/partials/homepage.html",
       controller: function($scope, $resource, Bookmark) {
+        $scope.tags = [];
 
         function getUniqueTags(array) {
           var sorted = array.sort();
           var resultArray = [];
           for(var i = 0; i < array.length; i++) {
             if(resultArray[resultArray.length-1] != array[i]) {
-              resultArray[resultArray.length] = array[i]
+              resultArray[resultArray.length] = array[i];
             }
           }
           return resultArray;
@@ -32,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             });
             $scope.tags = getUniqueTags($scope.tags);
           });
-        }
+        };
 
         $scope.allBookmarks = $scope.getBookmarks();
         $scope.bookmarks = $scope.bookmarks || $scope.allBookmarks;
@@ -40,17 +41,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
         $scope.sortByTag = function(tag) {
           $scope.bookmarks = $scope.allBookmarks.filter(function(bookmark) {
             return bookmark.tags.indexOf(tag) > -1;
-          })
+          });
         };
 
         $scope.deleteBookmark = function(bookmarkId) {
           Bookmark.get({ id: bookmarkId }, function(bookmarkToDel) {
             $scope.bmark = bookmarkToDel;
+
             $scope.bmark.$delete({id: bookmarkId}, function() {
               $scope.bookmarks = $scope.getBookmarks();
             });
           });
-        }
+        };
 
         $scope.save = function(bookmark) {
           var newBookmark = new Bookmark();
@@ -67,12 +69,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
             $scope.addedBookmark = $scope.bookmark;
             $scope.bookmark = {};
           });
-        }
+        };
 
         $scope.cancel = function() {
           $scope.bookmark = {};
-        }
-      }
+        };
+      },
+      controllerAs: 'appController'
     })
     .state('bookmark', {
       url: "/edit/bookmark/:id",

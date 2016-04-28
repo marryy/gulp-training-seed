@@ -1,15 +1,12 @@
-app.directive('tags', function($parse) {
+app.directive('tags', function() {
   return {
-    restrict: "E",
+    restrict: 'E',
     scope: {
       selectable: '=',
       tags: '=',
       sortByTag: '&'
     },
     templateUrl: 'app/partials/directives/tags.html',
-    replace: 'true',
-    link: function(scope, elem, attrs) {
-
-    }
+    replace: 'true'
   };
 });

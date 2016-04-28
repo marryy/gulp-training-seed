@@ -1,6 +1,6 @@
-app.directive('bookmarks', function($parse) {
+app.directive('bookmarks', function() {
   return {
-    restrict: "E",
+    restrict: 'E',
     scope: {
         bookmarks: '=',
         deleteBookmark: '&'

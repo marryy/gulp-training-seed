@@ -1,0 +1,18 @@
+<ul>
+  <li ng-repeat="bmark in bookmarks track by $index">
+    <div class="title">
+      <span>{{bmark.title}}</span>
+    </div>
+    <div class="url">
+      <span>{{bmark.url}}</span>
+    </div>
+    <div class="tags">
+      <tags tags="bmark.tags" selectable="false"><tags>
+      <!-- <span ng-repeat="tag in bmark.tags track by $index" class="tag">{{tag}}</span> -->
+    </div>
+    <div class="buttons-container">
+      <a ui-sref="bookmark({id:bmark._id.$oid})" class="btn">Edit</a>
+      <a class="btn" ng-click="deleteBookmark({id:bmark._id.$oid})">Delete</a>
+    </div>
+  </li>
+</ul>
