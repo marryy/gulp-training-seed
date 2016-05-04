@@ -6,7 +6,7 @@ app.directive('tags', function() {
       tags: '=',
       sortByTag: '&'
     },
-    templateUrl: 'app/partials/directives/tags.html',
+    templateUrl: 'app/components/tags-cmp/tags.html',
     replace: 'true'
   };
 });

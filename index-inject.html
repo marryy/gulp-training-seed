@@ -18,20 +18,20 @@
     <script src="https://code.angularjs.org/1.4.5/angular-mocks.js"></script>
 
 
-    <script src="app/js/services/service.js"></script>
-    <script src="app/js/app.js"></script>
-    <script src="app/js/directives/tags.js"></script>
-    <script src="app/js/directives/bookmarks.js"></script>
+    <script src="app/service.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/tags-cmp/tags.js"></script>
+    <script src="app/components/bookmarks-cmp/bookmarks.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet/less" type="text/css" href="app/styles/main.less" />
   </head>
 
   <body>
-    <div ng-include="'app/templates/header.html'"></div>
+    <div ng-include="'app/components/header-cmp/header.html'"></div>
     <div class="container" ui-view></div>
 
-    <script src="app/js/less.js"></script>
+    <script src="app/lib/less.js"></script>
   </body>
 
 </html>

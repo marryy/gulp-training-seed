@@ -5,6 +5,6 @@ app.directive('bookmarks', function() {
         bookmarks: '=',
         deleteBookmark: '&'
     },
-    templateUrl: 'app/partials/directives/bookmarks.html'
+    templateUrl: 'app/components/bookmarks-cmp/bookmarks.html'
   };
 });

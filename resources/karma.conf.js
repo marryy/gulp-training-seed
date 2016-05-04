@@ -22,7 +22,7 @@ module.exports = function (config) {
             'app/**/*.module.js',
             'app/**/*.directive.js',
             'app/**/*.html',
-            'e2e-tests/**/*.spec.js',
+            'app/components/**/*.spec.js',
             'app/**/*.json'
         ],
         exclude: [

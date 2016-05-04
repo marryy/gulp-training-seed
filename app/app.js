@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('bookmarks', {
       url: '/',
-      templateUrl: "app/partials/homepage.html",
+      templateUrl: "app/components/homepage-cmp/homepage.html",
       controller: function($scope, $resource, Bookmark) {
         $scope.tags = [];
 
@@ -79,7 +79,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('bookmark', {
       url: "/edit/bookmark/:id",
-      templateUrl: "app/partials/bookmark.html",
+      templateUrl: "app/components/bookmark-cmp/bookmark.html",
       controller: function($scope, $stateParams, $resource, Bookmark) {
         $scope.id = $stateParams.id;
 
