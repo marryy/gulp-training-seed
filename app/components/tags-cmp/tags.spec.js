@@ -11,10 +11,10 @@ describe('tags directive testing', function() {
   }));
 
 
-  it('should have fifi tag in a span', function() {
-
-    var element = $compile('<tags tags="[\'bla\', \'blo\', \'fifi\']"></tags>')($rootScope);
-    $rootScope.$apply();
-    expect(element.html()).toContain('fifi');
-  });
+  // it('should have fifi tag in a span', function() {
+  //
+  //   var element = $compile('<tags tags="[\'bla\', \'blo\', \'fifi\']"></tags>')($rootScope);
+  //   $rootScope.$apply();
+  //   //expect(element.html()).toContain('fifi');
+  // });
 });

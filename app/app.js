@@ -88,12 +88,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 
         $scope.update = function(newBookmark) {
+          var tags = newBookmark.tags.split(',');
           Bookmark.update({id: $scope.id}, {
             title: newBookmark.title,
             url: newBookmark.url,
-            tags: newBookmark.tags
+            tags: tags
           }, function() {
-            $scope.bookmarks = $scope.getBookmarks();
+
           });
         };
       }
