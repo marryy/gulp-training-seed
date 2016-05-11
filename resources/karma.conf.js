@@ -16,17 +16,16 @@ module.exports = function (config) {
             'resources/directive-builder.js',
             'resources/package-version/*.js',
             'resources/package-version/*spec.js',
-            'bower_components/d3/d3.js',
-            'app/**/_*.js',
-            'app/js/**/*.js',
-            'app/**/*.module.js',
-            'app/**/*.directive.js',
+            'app/**/**/_*.js',
+            'app/**/**/*.js',
             'app/**/*.html',
             'app/components/**/*.spec.js',
             'app/**/*.json'
         ],
         exclude: [
-          'app/js/less.js'
+          'app/js/less.js',
+          'app/lib/*.js',
+          'app/lib/*.json'
         ],
         plugins: [
             'karma-ng-html2js-preprocessor',

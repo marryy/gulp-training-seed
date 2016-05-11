@@ -1,20 +1,30 @@
-'use strict';
+describe('tags directive', function () {
+  var element, $scope;
 
-describe('tags directive testing', function() {
-  var $compile, $rootScope, directiveBuilder, directive;
+  beforeEach(module("bookmarks"));
 
-  beforeEach(module('bookmarks'));
+  beforeEach(inject(function($compile, $rootScope) {
+    $scope = $rootScope;
 
-  beforeEach(inject(function(_$compile_, _$rootScope_){
-    $compile = _$compile_;
-    $rootScope = _$rootScope_;
-  }));
+    $scope.tags = ['angular', 'html', 'javascript', 'jasmine', 'karma'];
 
+    element = angular.element('<tags selectable="true" tags="tags" sort-by-tag="sortByTag(tag)"></tags>');
+    $compile(element)($rootScope);
 
-  // it('should have fifi tag in a span', function() {
-  //
-  //   var element = $compile('<tags tags="[\'bla\', \'blo\', \'fifi\']"></tags>')($rootScope);
-  //   $rootScope.$apply();
-  //   //expect(element.html()).toContain('fifi');
-  // });
+    $scope.$digest();
+  }))
+
+  it("should have tags loaded", function() {
+    console.log(element);
+    expect(element.isolateScope().tags.length).toEqual(5);
+    expect(element.isolateScope().tags[2]).toEqual("javascript");
+  });
+
+  it("should have a 'sortByTag' function defined", function() {
+    expect(element.isolateScope().sortByTag).toEqual(jasmine.any(Function));
+  });
+
+  it("should have assigned a 'true' value to selectable", function() {
+    expect(element.isolateScope().selectable).toBe(true);
+  });
 });
