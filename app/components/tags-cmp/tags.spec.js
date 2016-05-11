@@ -15,7 +15,6 @@ describe('tags directive', function () {
   }))
 
   it("should have tags loaded", function() {
-    console.log(element);
     expect(element.isolateScope().tags.length).toEqual(5);
     expect(element.isolateScope().tags[2]).toEqual("javascript");
   });

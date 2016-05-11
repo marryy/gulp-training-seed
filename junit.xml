@@ -1,32 +1,37 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-05-11T10:45:27" id="0" hostname="EPBGSOFW0108">
+  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-05-11T13:51:02" id="0" hostname="EPBGSOFW0108">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
     </properties>
   </testsuite>
-  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-05-11T10:45:27" id="0" hostname="EPBGSOFW0108" tests="13" errors="0" failures="0" time="0.095">
+  <testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="Unit tests" timestamp="2016-05-11T13:51:03" id="0" hostname="EPBGSOFW0108" tests="22" errors="0" failures="0" time="0.117">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
     </properties>
-    <testcase name="should be defined" time="0.021" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).package-version"/>
-    <testcase name="should have bookmarks loaded" time="0.024" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
-    <testcase name="should have deleteBookmark function and render correctly elements" time="0.01" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
-    <testcase name="should make a delete request after calling the &quot;deleteBookmark&quot; function" time="0.014" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
-    <testcase name="should have tags loaded" time="0.005" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive"/>
-    <testcase name="should have a &apos;sortByTag&apos; function defined" time="0.005" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive"/>
+    <testcase name="should be defined" time="0.02" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).package-version"/>
+    <testcase name="should have a &quot;getBookmarks&quot; function defined" time="0.007" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should have a &quot;sortByTag&quot; function defined" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should have a &quot;deleteBookmark&quot; function defined" time="0.001" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should have a &quot;save&quot; function defined" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should have a &quot;cancel&quot; function defined" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should render all the bookmarks on init" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should clear the bookmark object on &apos;cancel&apos; click" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should make a delete request after calling the &quot;deleteBookmark&quot; function" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should make a put request after calling the &quot;save&quot; function" time="0.006" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).app controller when created"/>
+    <testcase name="should have bookmarks loaded" time="0.021" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
+    <testcase name="should render correctly elements" time="0.009" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
+    <testcase name="should make a delete request after calling the &quot;deleteBookmark&quot; function" time="0.01" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).customers component"/>
+    <testcase name="should have tags loaded" time="0.004" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive"/>
+    <testcase name="should have a &apos;sortByTag&apos; function defined" time="0.01" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive"/>
     <testcase name="should have assigned a &apos;true&apos; value to selectable" time="0.006" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).tags directive"/>
-    <testcase name="should have a &quot;get&quot; function defined" time="0.001" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
+    <testcase name="should have a &quot;get&quot; function defined" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
     <testcase name="should have an &quot;update&quot; function defined" time="0.001" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
-    <testcase name="should have a &quot;save&quot; function defined" time="0.001" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
+    <testcase name="should have a &quot;save&quot; function defined" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
     <testcase name="should have a &quot;remove&quot; function defined" time="0.001" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
-    <testcase name="should send a PUT request on update" time="0.004" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
-    <testcase name="should make a DELETE request on &quot;delete&quot;" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
-    <system-out><![CDATA[PhantomJS 1.9.8 (Windows 8 0.0.0) LOG: Object{length: 1, 0: <div class="tags-directive ng-isolate-scope" selectable="true" tags="tags" sort-by-tag="sortByTag(tag)">
-  <!-- ngRepeat: tag in tags track by $index --><!-- ngIf: !selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: !selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: !selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: !selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: !selectable --><!-- end ngRepeat: tag in tags track by $index -->
-  <!-- ngRepeat: tag in tags track by $index --><!-- ngIf: selectable --><span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag ng-binding ng-scope" ng-click="sortByTag({tag:tag})">angular</span><!-- end ngIf: selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: selectable --><span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag ng-binding ng-scope" ng-click="sortByTag({tag:tag})">html</span><!-- end ngIf: selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: selectable --><span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag ng-binding ng-scope" ng-click="sortByTag({tag:tag})">javascript</span><!-- end ngIf: selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: selectable --><span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag ng-binding ng-scope" ng-click="sortByTag({tag:tag})">jasmine</span><!-- end ngIf: selectable --><!-- end ngRepeat: tag in tags track by $index --><!-- ngIf: selectable --><span ng-if="selectable" ng-repeat="tag in tags track by $index" class="tag ng-binding ng-scope" ng-click="sortByTag({tag:tag})">karma</span><!-- end ngIf: selectable --><!-- end ngRepeat: tag in tags track by $index -->
-</div>}
-
+    <testcase name="should send a PUT request on update" time="0.002" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
+    <testcase name="should make a DELETE request on &quot;delete&quot;" time="0.003" classname="Unit tests PhantomJS 1.9.8 (Windows 8 0.0.0).rest service"/>
+    <system-out><![CDATA[
 ]]></system-out>
     <system-err/>
   </testsuite>

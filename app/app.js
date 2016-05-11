@@ -8,74 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('bookmarks', {
       url: '/',
       templateUrl: "app/components/homepage-cmp/homepage.html",
-      controller: function($scope, $resource, Bookmark) {
-        $scope.tags = [];
-
-        function getUniqueTags(array) {
-          var sorted = array.sort();
-          var resultArray = [];
-          for(var i = 0; i < array.length; i++) {
-            if(resultArray[resultArray.length-1] != array[i]) {
-              resultArray[resultArray.length] = array[i];
-            }
-          }
-          return resultArray;
-        }
-
-        $scope.getBookmarks = function() {
-          return Bookmark.query(function(resultBookmarks) {
-            resultBookmarks.forEach(function(bookmark) {
-              $scope.tags = $scope.tags || [];
-              var tags = bookmark.tags;
-              tags.forEach(function(tag) {
-                $scope.tags.push(tag);
-              });
-            });
-            $scope.tags = getUniqueTags($scope.tags);
-          });
-        };
-
-        $scope.allBookmarks = $scope.getBookmarks();
-        $scope.bookmarks = $scope.bookmarks || $scope.allBookmarks;
-
-        $scope.sortByTag = function(tag) {
-          $scope.bookmarks = $scope.allBookmarks.filter(function(bookmark) {
-            return bookmark.tags.indexOf(tag) > -1;
-          });
-        };
-
-        $scope.deleteBookmark = function(bookmarkId) {
-          Bookmark.get({ id: bookmarkId }, function(bookmarkToDel) {
-            $scope.bmark = bookmarkToDel;
-
-            $scope.bmark.$delete({id: bookmarkId}, function() {
-              $scope.bookmarks = $scope.getBookmarks();
-            });
-          });
-        };
-
-        $scope.save = function(bookmark) {
-          var newBookmark = new Bookmark();
-          var tagsArray = [];
-          var tags = bookmark.tags.split(",");
-          tags.forEach(function(tag) {
-            tagsArray.push(tag);
-          });
-          bookmark.tags = tagsArray;
-          newBookmark = bookmark;
-
-          Bookmark.save(newBookmark, function() {
-            $scope.bookmarks = $scope.getBookmarks();
-            $scope.addedBookmark = $scope.bookmark;
-            $scope.bookmark = {};
-          });
-        };
-
-        $scope.cancel = function() {
-          $scope.bookmark = {};
-        };
-      },
-      controllerAs: 'appController'
+      controller: 'appController',
     })
     .state('bookmark', {
       url: "/edit/bookmark/:id",
@@ -99,4 +32,75 @@ app.config(function($stateProvider, $urlRouterProvider) {
         };
       }
     });
+});
+
+
+app.controller('appController', function($scope, $resource, Bookmark) {
+  $scope.tags = [];
+
+  function getUniqueTags(array) {
+    var sorted = array.sort();
+    var resultArray = [];
+    for(var i = 0; i < array.length; i++) {
+      if(resultArray[resultArray.length-1] != array[i]) {
+        resultArray[resultArray.length] = array[i];
+      }
+    }
+    return resultArray;
+  }
+
+  $scope.getBookmarks = function() {
+    return Bookmark.query(function(resultBookmarks) {
+      resultBookmarks.forEach(function(bookmark) {
+        $scope.tags = $scope.tags || [];
+        var tags = bookmark.tags;
+        tags.forEach(function(tag) {
+          $scope.tags.push(tag);
+        });
+      });
+      $scope.tags = getUniqueTags($scope.tags);
+    });
+  };
+
+  $scope.allBookmarks = $scope.getBookmarks();
+  $scope.bookmarks = $scope.bookmarks || $scope.allBookmarks;
+
+  $scope.sortByTag = function(tag) {
+    $scope.bookmarks = $scope.allBookmarks.filter(function(bookmark) {
+      return bookmark.tags.indexOf(tag) > -1;
+    });
+  };
+
+  $scope.deleteBookmark = function(bookmarkId) {
+    var bookms = [];
+    $scope.bookmarks.forEach(function(bmk) {
+      if(bmk._id.$oid !== bookmarkId) {
+        bookms.push(bmk);
+      }
+    });
+    $scope.bookmarks = bookms;
+
+    Bookmark.get({ id: bookmarkId }, function(bookmarkToDel) {
+      $scope.bmark = bookmarkToDel;
+      $scope.bmark.$delete({id: bookmarkId}, function() {
+      });
+    });
+  };
+
+  $scope.save = function(bookmark) {
+    var newBookmark = new Bookmark();
+    var tags = bookmark.tags.split(",");
+    bookmark.tags = tags;
+    newBookmark = bookmark;
+
+    Bookmark.save(newBookmark, function() {
+      $scope.addedBookmark = $scope.bookmark;
+      $scope.bookmark = {};
+      $scope.allBookmarks = $scope.bookmarks = $scope.getBookmarks();
+    });
+  };
+
+  $scope.cancel = function() {
+    $scope.bookmark = {};
+  };
 });

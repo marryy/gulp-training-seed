@@ -33,17 +33,13 @@ describe('customers component', function () {
     expect(element.isolateScope().bookmarks[0].name).toEqual("Angularjs");
   });
 
-  it("should have deleteBookmark function and render correctly elements", function() {
-    $scope.$digest();
+  it("should render correctly elements", function() {
     expect(element.isolateScope().deleteBookmark).toEqual(jasmine.any(Function));
+
     var anchors = element.find("a");
-    var delBtn = anchors[1];
+
     expect(anchors.length).toBe(4);
-
     expect(anchors[0].href).toContain("/edit/bookmark/234");
-
-    var id = element.isolateScope().bookmarks[0];
-    element.isolateScope().deleteBookmark(id);
   });
 
   it('should make a delete request after calling the "deleteBookmark" function', function () {
